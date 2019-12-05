@@ -1,0 +1,4 @@
+{
+  arrayReverse
+} = require('./array-reverse');
+
