@@ -1,6 +1,6 @@
-{
+const {
   arrayReverse
-} = require('./array-reverse');
+} = require('./array-reverse.js');
 
 describe ('array reverse module', () => {
   it('reverses an even length array', () => {
@@ -9,5 +9,4 @@ describe ('array reverse module', () => {
   it('reverses an odd length array', () => {
     expect(arrayReverse([1, 2, 3])).toEqual([3, 2, 1]);
   });
-
-};
+});
