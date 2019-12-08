@@ -1,4 +1,4 @@
-const { LinkedList } = require('linked-list.js');
+const { LinkedList } = require('./linked-list');
 let testList = null;
 beforeEach(() => {
   testList = new LinkedList();
