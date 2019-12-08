@@ -23,6 +23,15 @@ class LinkedList {
     }
     return false;
   }
+  toString() {
+    const values = [];
+    let current = this.head;
+    while(current) {
+      values.push(current.value);
+      current = current.next;
+    }
+    return String(values);
+  }
 }
 
 module.exports = {
