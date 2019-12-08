@@ -13,6 +13,15 @@ class LinkedList {
     const newNode = new Node(value, this.head);
     this.head = newNode;
   }
+  includes(value) {
+    let current = this.head;
+    while(current) {
+      if(value === current.value) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 module.exports = {
