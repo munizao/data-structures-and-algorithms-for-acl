@@ -19,6 +19,7 @@ class LinkedList {
       if(value === current.value) {
         return true;
       }
+      current = current.next;
     }
     return false;
   }
