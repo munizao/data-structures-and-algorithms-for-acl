@@ -22,6 +22,6 @@ describe ('linked list module', () => {
   });
 
   it('toString writes a string of all values ', () => {
-    expect(testList.toString()).toEqual('"gravy", "potatoes", "brussels spouts"');
+    expect(testList.toString()).toEqual('brussels spouts,potatoes,gravy');
   });
 });
