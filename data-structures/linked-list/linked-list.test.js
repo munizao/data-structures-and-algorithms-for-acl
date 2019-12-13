@@ -1,10 +1,15 @@
 const { LinkedList } = require('./linked-list');
 let testList = null;
+let longerList = null;
 beforeEach(() => {
   testList = new LinkedList();
   testList.insert('gravy');
   testList.insert('potatoes');
   testList.insert('brussels spouts');
+  longerList = new LinkedList();
+  for(let i = 0; i < 15; i++) {
+    longerList.insert(i);
+  }
 });
 
 describe ('linked list module', () => {
@@ -22,6 +27,14 @@ describe ('linked list module', () => {
   });
 
   it('toString writes a string of all values ', () => {
-    expect(testList.toString()).toEqual('brussels spouts,potatoes,gravy');
+    expect(testList.toString()).toEqual('brussels spouts -> potatoes -> gravy');
+  });
+
+  it('kthFromEnd throws error if k is too large', () => {
+    expect(() => longerList.kthFromEnd(20)).toThrowError('k too large');
+  });
+
+  it('kthFromEnd throws error if k is negative', () => {
+    expect(() => longerList.kthFromEnd(-1)).toThrowError('k should not be negative');
   });
 });
