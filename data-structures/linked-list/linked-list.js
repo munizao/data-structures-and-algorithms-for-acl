@@ -58,8 +58,8 @@ class LinkedList {
   }
 
   kthFromEnd(k) {
-    if(k < 0) {
-      throw new Error('k should not be negative');
+    if(k < 0 || !Number.isInteger(k)) {
+      throw new Error('k must be a positive integer');
     }
     let current = this.head;
     const values = [];
@@ -67,7 +67,7 @@ class LinkedList {
       values.push(current.value);
       current = current.next;
     }
-    if(k > values.length) {
+    if(k >= values.length) {
       throw new Error('k too large');
     }
     return values[values.length - k - 1];
