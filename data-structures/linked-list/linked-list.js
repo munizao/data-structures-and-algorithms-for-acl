@@ -17,11 +17,16 @@ class LinkedList {
 
   append(value) {
     const newNode = new Node(value, null);
-    let current = this.head;
-    while(current && current.next) {
-      current = current.next;
+    if(!this.head) {
+      this.head = newNode;
     }
-    current.next = newNode;
+    else {
+      let current = this.head;
+      while(current && current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
   }
 
   includes(value) {
