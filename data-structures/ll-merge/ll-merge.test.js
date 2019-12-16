@@ -15,11 +15,22 @@ beforeEach(() => {
   testList2.append('cyan');
   testList2.append('magenta');
   testList2.append('yellow');
+
+  longerList = new LinkedList();
+  longerList.append('earth');
+  longerList.append('air');
+  longerList.append('water');
+  longerList.append('fire');
+  longerList.append('aether');
 });
 
 describe('linked list merge module', () => {
   it('merges two lists of the same length', () => {
     const mergedList = mergeLists(testList1, testList2);
     expect(mergedList.toString()).toEqual('red -> cyan -> green -> magenta -> blue -> yellow');
+  });
+  it('merges a shorter first list with a longer second list', () => {
+    const mergedList = mergeLists(testList1, longerList);
+    expect(mergedList.toString()).toEqual('red -> earth -> green -> air -> blue -> water -> fire -> aether')
   });
 });
