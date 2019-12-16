@@ -35,8 +35,19 @@ describe('linked list merge module', () => {
     expect(mergedList.toString()).toEqual('red -> earth -> green -> air -> blue -> water -> fire -> aether');
   });
 
+  
   it('merges a longer first list with a shorter second list', () => {
     const mergedList = mergeLists(longerList, testList1);
     expect(mergedList.toString()).toEqual('earth -> red -> air -> green -> water -> blue -> fire -> aether');
+  });
+  
+  it('merges a list with an empty second list', () => {
+    const mergedList = mergeLists(testList1, new LinkedList);
+    expect(mergedList.toString()).toEqual('red -> green -> blue');
+  });
+
+  it('merges an empty list with a second list', () => {
+    const mergedList = mergeLists(new LinkedList, testList1);
+    expect(mergedList.toString()).toEqual('red -> green -> blue');
   });
 });
