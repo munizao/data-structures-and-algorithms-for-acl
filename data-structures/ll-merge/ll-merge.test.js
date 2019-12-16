@@ -29,8 +29,14 @@ describe('linked list merge module', () => {
     const mergedList = mergeLists(testList1, testList2);
     expect(mergedList.toString()).toEqual('red -> cyan -> green -> magenta -> blue -> yellow');
   });
+
   it('merges a shorter first list with a longer second list', () => {
     const mergedList = mergeLists(testList1, longerList);
-    expect(mergedList.toString()).toEqual('red -> earth -> green -> air -> blue -> water -> fire -> aether')
+    expect(mergedList.toString()).toEqual('red -> earth -> green -> air -> blue -> water -> fire -> aether');
+  });
+
+  it('merges a longer first list with a shorter second list', () => {
+    const mergedList = mergeLists(longerList, testList1);
+    expect(mergedList.toString()).toEqual('earth -> red -> air -> green -> water -> blue -> fire -> aether');
   });
 });
