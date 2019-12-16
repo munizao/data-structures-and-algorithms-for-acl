@@ -1,4 +1,7 @@
 function mergeLists(l1, l2) {
+  if(!l1.head) {
+    return l2;
+  }
   let curr1 = l1.head;
   let curr2 = l2.head;
   while(curr1 && curr2) {
