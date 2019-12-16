@@ -9,6 +9,7 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
+
   insert(value) {
     const newNode = new Node(value, this.head);
     this.head = newNode;
@@ -54,6 +55,22 @@ class LinkedList {
       }
       current = current.next;
     }
+  }
+
+  kthFromEnd(k) {
+    if(k < 0 || !Number.isInteger(k)) {
+      throw new Error('k must be a positive integer');
+    }
+    let current = this.head;
+    const values = [];
+    while(current) {
+      values.push(current.value);
+      current = current.next;
+    }
+    if(k >= values.length) {
+      throw new Error('k too large');
+    }
+    return values[values.length - k - 1];
   }
 
   toString() {
